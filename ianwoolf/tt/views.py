@@ -191,4 +191,5 @@ def myown2(request):
         pass
     result = util.ReadGpData(Num)
     print result
+    return render_to_response("gup.html",)
     return HttpResponse(result)
