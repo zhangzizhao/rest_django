@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from tt.models import people
+import util
 from tt.serializers import peopleSerializer
 #~~  begin
 #tu 2 api_view
@@ -182,5 +183,12 @@ def myown(request):
     return render_to_response("test.html",
                              )
 def myown2(request):
-    return render_to_response("back.html",
-                             )
+    if request.method == 'GET':
+        Num = request.REQUEST.get('Num','null')
+        pass
+    elif request.method == 'POST':
+        Num = request.REQUEST.post('Num','null')
+        pass
+    result = util.ReadGpData(Num)
+    print result
+    return HttpResponse(result)

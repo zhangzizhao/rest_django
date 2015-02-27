@@ -17,4 +17,5 @@ def ReadGpData(Num):
         	print 'msg:', res.msg
         	print 'headers:', res.getheaders()
 	conn.close()
+        result = result.split("=")[1].strip(";").strip('"')
         return result
