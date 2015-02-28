@@ -180,7 +180,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 def myown(request):
-    return render_to_response("test.html",
+    return render_to_response("index.html",
                              )
 def myown2(request):
     if request.method == 'GET':
